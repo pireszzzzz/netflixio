@@ -86,14 +86,14 @@ inputBirthday?.addEventListener("input", (event) => {
 });
 
 const formatInputCep = (input) => {
-  const formattedInput = input.value.replace(/\D/g, "").substring(0, 8);
+  const formattedInput = input.value.replace(/\D/g, "").substring(0, 5);
   const match = formattedInput.match(/^(\d{0,5})(\d{0,3})$/);
   if (match) {
     let formattedValue = "";
     if (match[1]) {
       formattedValue += match[1];
       if (match[1].length === 5 && input.value.length !== 6) {
-        formattedValue += "-";
+        formattedValue += "";
       }
     }
     if (match[2]) {
@@ -146,14 +146,14 @@ inputCartao?.addEventListener("input", (event) => {
 });
 
 const formatInputTelefone = (input) => {
-  const formattedInput = input.value.replace(/\D/g, "").substring(0, 11);
+  const formattedInput = input.value.replace(/\D/g, "").substring(0, 9);
   let formattedValue = "";
   if (formattedInput.length > 0) {
-    formattedValue += "+" + formattedInput.substring(0, 2) + " ";
+    formattedValue += "" + formattedInput.substring(0, 2) + "";
     if (formattedInput.length > 2) {
-      formattedValue += formattedInput.substring(2, 5) + " ";
+      formattedValue += formattedInput.substring(2, 5) + "";
       if (formattedInput.length > 5) {
-        formattedValue += formattedInput.substring(5, 8) + " ";
+        formattedValue += formattedInput.substring(5, 8) + "";
         if (formattedInput.length > 8) {
           formattedValue += formattedInput.substring(8);
         }
